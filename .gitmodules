@@ -1,0 +1,12 @@
+[submodule "LPC1768_DMA"]
+	path = LPC1768_DMA
+	url = gitifyhg::https://developer.mbed.org/users/steniu01/code/LPC1768_DMA/
+[submodule "FatFileSystem"]
+	path = FatFileSystem
+	url = gitifyhg::https://developer.mbed.org/users/AdamGreen/code/FatFileSystem/
+[submodule "mbed-src"]
+	path = mbed-src
+	url = gitifyhg::https://developer.mbed.org/users/mbed_official/code/mbed-src/
+[submodule "mbed-rtos"]
+	path = mbed-rtos
+	url = gitifyhg::https://developer.mbed.org/users/mbed_official/code/mbed-rtos/
