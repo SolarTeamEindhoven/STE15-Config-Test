@@ -10,3 +10,15 @@
 [submodule "FatFileSystem"]
 	path = FatFileSystem
 	url = git@bitbucket.org:solarteameindhoven/fatfilesystem.git
+[submodule "ESLib"]
+	path = ESLib
+	url = git@bitbucket.org:solarteameindhoven/ste15-eslib.git
+[submodule "Sensors"]
+	path = Sensors
+	url = git@bitbucket.org:solarteameindhoven/ste15-sensors.git
+[submodule "Actuators"]
+	path = Actuators
+	url = git@bitbucket.org:solarteameindhoven/ste15-actuators.git
+[submodule "Config"]
+	path = Config
+	url = git@bitbucket.org:solarteameindhoven/ste15-config.git
