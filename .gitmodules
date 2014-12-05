@@ -1,15 +1,3 @@
-[submodule "LPC1768_DMA"]
-	path = LPC1768_DMA
-	url = gitifyhg::https://developer.mbed.org/users/steniu01/code/LPC1768_DMA/
-[submodule "mbed-src"]
-	path = mbed-src
-	url = gitifyhg::https://developer.mbed.org/users/mbed_official/code/mbed-src/
-[submodule "mbed-rtos"]
-	path = mbed-rtos
-	url = gitifyhg::https://developer.mbed.org/users/mbed_official/code/mbed-rtos/
-[submodule "FatFileSystem"]
-	path = FatFileSystem
-	url = git@bitbucket.org:solarteameindhoven/fatfilesystem.git
 [submodule "ESLib"]
 	path = ESLib
 	url = git@bitbucket.org:solarteameindhoven/ste15-eslib.git
@@ -22,3 +10,15 @@
 [submodule "Config"]
 	path = Config
 	url = git@bitbucket.org:solarteameindhoven/ste15-config.git
+[submodule "FatFileSystem"]
+	path = FatFileSystem
+	url = git@bitbucket.org:solarteameindhoven/fatfilesystem.git
+[submodule "mbed-src"]
+	path = mbed-src
+	url = git@bitbucket.org:solarteameindhoven/mbed-src.git
+[submodule "mbed-rtos"]
+	path = mbed-rtos
+	url = git@bitbucket.org:solarteameindhoven/mbed-rtos.git
+[submodule "LPC1768_DMA"]
+	path = LPC1768_DMA
+	url = git@bitbucket.org:solarteameindhoven/lpc1768_dma.git
