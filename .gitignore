@@ -51,3 +51,6 @@ C(++) ignore
 /Debug/
 /Release/
 /.settings/
+
+# merge backups
+*.orig
