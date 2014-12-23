@@ -7,9 +7,6 @@
 [submodule "Actuators"]
 	path = Actuators
 	url = git@bitbucket.org:solarteameindhoven/ste15-actuators.git
-[submodule "Config"]
-	path = Config
-	url = git@bitbucket.org:solarteameindhoven/ste15-config.git
 [submodule "FatFileSystem"]
 	path = FatFileSystem
 	url = git@bitbucket.org:solarteameindhoven/fatfilesystem.git
