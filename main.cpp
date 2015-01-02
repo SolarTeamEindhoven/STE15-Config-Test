@@ -4,8 +4,11 @@
 
 #include "Testing.h"
 #include "mbed.h"
-#include "WTD.h"
+#include "WDT.h"
 #include "rtos.h"
+#include <TextLogger.h>
+
+#define LOGLEVEL 4
 
 DigitalOut leds[8] =
 {
@@ -66,43 +69,64 @@ int main() {
 
 	setLedsToNumber(0);
 	bool resetByWDT = STE2015::WatchDogTimer::causedReset();
-	if(!resetByWDT)
-	{
+
+
+	LocalFileSystem local("local");
+	FILE* file = fopen("/local/output.log", "a");
+
+	INFO("\nNEW LOG\n");
+
+	STE2015::Debugger::setLogFile(file);
+
+	ERROR("ERROR method of Text logger is working if you see this message");
+	WARN("WARN method of Text logger is working if you see this message");
+	DBG("DBG method of Text logger is working if you see this message");
+	INFO("INFO method of Text logger is working if you see this message");
+
+	if (!resetByWDT) {
+		testSensorStateBuffer();
+		setLedsToNumber(1);
+		waitForUser();
+		testAbstractActuator();
+		setLedsToNumber(2);
+		waitForUser();
+		testActuatorList();
+		setLedsToNumber(3);
+		waitForUser();
+		testPostOffice();
+		setLedsToNumber(4);
+		waitForUser();
+		testAbstractSensor();
+		setLedsToNumber(5);
+		waitForUser();
+		testBaseSensor();
+		setLedsToNumber(6);
+		waitForUser();
+		testBaseActuator();
+		setLedsToNumber(7);
+		waitForUser();
+		testAcceptanceFilter();
+		setLedsToNumber(8);
+		waitForUser();
+		testCanClasses();
+		setLedsToNumber(9);
+		waitForUser();
+
 		//WDT timer may have caused the reset. It's a bit special regarding the testing!
 		waitForUser();
 		testWDT();
 		setLedsToNumber(255);
 	}
+	else
+	{
+		//Will never get logged due to hardfault disconnecting the debugger
+		INFO("WDT test succeeded");
 
-	setLedsToNumber(1);
-	waitForUser();
-	void testTextLogger();
-	setLedsToNumber(2);
-	waitForUser();
-	void testPostOffice();
-	setLedsToNumber(3);
-	waitForUser();
-	void testAbstractSensor();
-	setLedsToNumber(4);
-	waitForUser();
-	void testAbstractActuator();
-	setLedsToNumber(5);
-	waitForUser();
-	void testBaseSensor();
-	setLedsToNumber(6);
-	waitForUser();
-	void testBaseActuator();
-	setLedsToNumber(7);
-	waitForUser();
-	void testSensorStateBuffer();
-	setLedsToNumber(8);
-	waitForUser();
-	void testCanClasses();
-	setLedsToNumber(9);
-	waitForUser();
-	void testActuators();
-	setLedsToNumber(10);
-	waitForUser();
+		setLedsToNumber(10);
+		waitForUser();
+	}
+
+	fclose(file);
 
 	int number = 0;
 	while(true)

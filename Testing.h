@@ -12,14 +12,14 @@
 
 //:TODO: define a testing method for each component.
 void testWDT();
-void testTextLogger();
+void testActuatorList();
+void testSensorStateBuffer();
+void testAbstractActuator();
 void testPostOffice();
 void testAbstractSensor();
-void testAbstractActuator();
 void testBaseSensor();
 void testBaseActuator();
-void testSensorStateBuffer();
+void testAcceptanceFilter();
 void testCanClasses();
-void testActuators();
 
 #endif /* TESTING_H_ */
