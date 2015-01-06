@@ -11,6 +11,7 @@
 #include "test/WDTTest.h"
 #include "test/ActuatorListTest.h"
 #include "TextLogger.h"
+#include "SensorStateBufferTest.h"
 
 using namespace STE2015;
 
@@ -23,7 +24,7 @@ void testWDT()
 
 void testSensorStateBuffer()
 {
-	//:TODO: call tests
+	SensorStateBufferTest().SensorStateBufferTests();
 }
 
 void testAbstractActuator()
