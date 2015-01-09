@@ -11,7 +11,8 @@
 #include "test/WDTTest.h"
 #include "test/ActuatorListTest.h"
 #include "TextLogger.h"
-#include "SensorStateBufferTest.h"
+#include "test/SensorStateBufferTest.h"
+#include "test/PostOfficeTest.h"
 
 using namespace STE2015;
 
@@ -25,6 +26,7 @@ void testWDT()
 void testSensorStateBuffer()
 {
 	SensorStateBufferTest().SensorStateBufferTests();
+	INFO("SensorStateBuffer tests are finished");
 }
 
 void testAbstractActuator()
@@ -35,14 +37,13 @@ void testAbstractActuator()
 void testActuatorList()
 {
 	ActuatorListTest::test();
-	int letMeAddABreakPointPlox;
-	letMeAddABreakPointPlox = 0;
-	INFO("ActuatorList tests are successful");
+	INFO("ActuatorList tests are finished");
 }
 
 void testPostOffice()
 {
-	//:TODO: call tests
+	PostOfficeTest::testPostOffice();
+	INFO("PostOffice tests are finished");
 }
 
 void testAbstractSensor()
