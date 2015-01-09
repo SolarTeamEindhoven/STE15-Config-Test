@@ -7,9 +7,11 @@
 
 #define LOGLEVEL 4
 
+// Related header
 #include "Testing.h"
+// Internal includes
 #include "test/WDTTest.h"
-#include "test/ActuatorListTest.h"
+#include "test/actuator/ActuatorListTest.h"
 #include "TextLogger.h"
 
 using namespace STE2015;
