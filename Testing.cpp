@@ -9,10 +9,11 @@
 
 #include "Testing.h"
 #include "test/WDTTest.h"
-#include "test/ActuatorListTest.h"
+#include "test/actuator/ActuatorListTest.h"
 #include "TextLogger.h"
-#include "test/SensorStateBufferTest.h"
+#include "test/sensor/SensorStateBufferTest.h"
 #include "test/PostOfficeTest.h"
+#include "test/can/AcceptanceFilterTest.h"
 
 using namespace STE2015;
 
@@ -65,7 +66,7 @@ void testBaseActuator()
 
 void testAcceptanceFilter()
 {
-	//:TODO: call tests
+	AcceptanceFilterTest::test();
 }
 
 void testCanClasses()
