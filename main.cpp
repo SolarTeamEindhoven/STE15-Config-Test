@@ -6,9 +6,14 @@
 #include "CANReader.h"
 #include "CANSensor.h"
 
+// Uncomment to use hardware sensors on this board instead of CAN sensors
+//#define IMPLEMENT_SENSOR_HARDWARE
+
 using namespace STE2015;
 
 int main() {
+	std::size_t hoi = sizeof(SensorID_t);
+
 	// Create dummy list
 	STE2015::LED0 l0;
 	STE2015::LED1 l1;
@@ -23,23 +28,28 @@ int main() {
 	ActuatorList actuators(listAbst, (size_t) 8);
 
 	mbed::CAN CANBus(PinName::P0_0, PinName::P0_1);
+	CANBus.frequency(10000);
 
 	// Initialize post office
 	PostOffice po(CANBus, actuators);
 
 	// Create joystick sensor
-//	JoyStickUp joystickUp(NULL, po);
-//	PotentioMeter potentio(NULL, po);
-
+#ifdef IMPLEMENT_SENSOR_HARDWARE
+	JoyStickUp joystickUp(NULL, po);
+	PotentioMeter potentio(NULL, po);
+#else
 	CANSensor<JoystickUpData> joystickSensor(NULL, 500, po);
 	CANSensor<PotentioData> potentioSensor(NULL, 500, po);
+#endif
 
-	AbstractSensor* listSens[2] = {&joystickSensor, &potentioSensor};
-	SensorList canSensors(listSens, (size_t) 2);
+	AbstractCANSensor* listSens[2] = {static_cast<AbstractCANSensor*>(&joystickSensor), static_cast<AbstractCANSensor*>(&potentioSensor)};
+	CanSensorList canSensors(listSens, (size_t) 2);
 
 	CANReader reader(CANBus, canSensors, 2);
+
 	while(1)
 	{
+		rtos::Thread::wait(1000);
 		// Make sure we don't cut off the main thread
 	}
 }
