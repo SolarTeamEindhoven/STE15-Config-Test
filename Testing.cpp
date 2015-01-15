@@ -9,9 +9,9 @@
 
 #include "Testing.h"
 #include "test/WDTTest.h"
-#include "test/ActuatorListTest.h"
+#include "test/actuator/ActuatorListTest.h"
 #include "TextLogger.h"
-#include "test/SensorStateBufferTest.h"
+#include "test/sensor/SensorStateBufferTest.h"
 #include "test/PostOfficeTest.h"
 
 using namespace STE2015;
@@ -36,14 +36,18 @@ void testAbstractActuator()
 
 void testActuatorList()
 {
+#ifdef COMPILE_ACTUATOR_TESTS
 	ActuatorListTest::test();
 	INFO("ActuatorList tests are finished");
+#endif
 }
 
 void testPostOffice()
 {
+#ifdef COMPILE_ACTUATOR_TESTS
 	PostOfficeTest::testPostOffice();
 	INFO("PostOffice tests are finished");
+#endif
 }
 
 void testAbstractSensor()
