@@ -11,6 +11,11 @@
 
 using namespace STE2015;
 
+enum signalList
+{
+	signalTerminate
+};
+
 int main() {
 	// Create dummy list
 	STE2015::LED0 l0;
@@ -31,23 +36,22 @@ int main() {
 	// Initialize post office
 	PostOffice po(CANBus, actuators);
 
-	// Create joystick sensor
+	// Create sensors
 #ifdef IMPLEMENT_SENSOR_HARDWARE
 	JoyStickUp joystickUp(NULL, po);
 	PotentioMeter potentio(NULL, po);
+
+	AbstractCANSensor* listSens[0] = {};
+	CanSensorList canSensors(listSens, (size_t) 0);
 #else
 	CANSensor<JoystickUpData> joystickSensor(NULL, 500, po);
 	CANSensor<PotentioData> potentioSensor(NULL, 500, po);
-#endif
 
 	AbstractCANSensor* listSens[2] = {static_cast<AbstractCANSensor*>(&joystickSensor), static_cast<AbstractCANSensor*>(&potentioSensor)};
 	CanSensorList canSensors(listSens, (size_t) 2);
+#endif
 
 	CANReader reader(CANBus, canSensors, 2);
 
-	while(1)
-	{
-		rtos::Thread::wait(1000);
-		// Make sure we don't cut off the main thread
-	}
+	rtos::Thread::signal_wait(signalTerminate);
 }
