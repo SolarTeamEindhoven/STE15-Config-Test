@@ -2,13 +2,13 @@
  * Testing configuration main file.
  */
 
+#define LOGLEVEL 4
+
 #include "Testing.h"
 #include "mbed.h"
 #include "WDT.h"
 #include "rtos.h"
 #include <TextLogger.h>
-
-#define LOGLEVEL 4
 
 DigitalOut leds[8] =
 {
