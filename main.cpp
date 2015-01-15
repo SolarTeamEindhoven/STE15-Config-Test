@@ -12,8 +12,6 @@
 using namespace STE2015;
 
 int main() {
-	std::size_t hoi = sizeof(SensorID_t);
-
 	// Create dummy list
 	STE2015::LED0 l0;
 	STE2015::LED1 l1;
