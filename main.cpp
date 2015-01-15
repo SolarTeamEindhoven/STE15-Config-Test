@@ -44,7 +44,7 @@ int main() {
 	AbstractCANSensor* listSens[0] = {};
 	CanSensorList canSensors(listSens, (size_t) 0);
 #else
-	CANSensor<JoystickUpData> joystickSensor(NULL, 500, po);
+	CANSensor<JoyUpSensorData> joystickSensor(NULL, 500, po);
 	CANSensor<PotentioData> potentioSensor(NULL, 500, po);
 
 	AbstractCANSensor* listSens[2] = {static_cast<AbstractCANSensor*>(&joystickSensor), static_cast<AbstractCANSensor*>(&potentioSensor)};
