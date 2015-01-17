@@ -19,3 +19,6 @@
 [submodule "LPC1768_DMA"]
 	path = LPC1768_DMA
 	url = git@bitbucket.org:solarteameindhoven/lpc1768_dma.git
+[submodule "ste15-csv2cpp"]
+	path = ste15-csv2cpp
+	url = git@bitbucket.org:solarteameindhoven/ste15-csv2cpp.git
