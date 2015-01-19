@@ -11,12 +11,12 @@
 
 using namespace STE2015;
 
-enum signalList
-{
-	signalTerminate
-};
+static osThreadId mainThreadId;
 
-int main() {
+int main()
+{
+	mainThreadId = rtos::Thread::gettid();
+
 	// Create dummy list
 	STE2015::LED0 l0;
 	STE2015::LED1 l1;
@@ -53,5 +53,10 @@ int main() {
 
 	CANReader reader(CANBus, canSensors, 2);
 
-	rtos::Thread::signal_wait(signalTerminate);
+	rtos::Thread::signal_wait(SIGNAL_TERMINATE);
+}
+
+void signalMainThread(MainThreadSignalList signal)
+{
+	osSignalSet(mainThreadId, signal);
 }
