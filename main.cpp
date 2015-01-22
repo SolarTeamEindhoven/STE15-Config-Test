@@ -1,13 +1,17 @@
 
+#define LOGLEVEL 4
+
 #include <mbed.h>
 #include "ESLib.h"
 #include "PotentioMeter.h"
 #include "Led.h"
 #include "CANReader.h"
 #include "CANSensor.h"
+#include "FIRFilter.h"
+#include "SDFileSystem.h"
 
 // Uncomment to use hardware sensors on this board instead of CAN sensors
-//#define IMPLEMENT_SENSOR_HARDWARE
+#define IMPLEMENT_SENSOR_HARDWARE
 
 using namespace STE2015;
 
@@ -16,6 +20,12 @@ static osThreadId mainThreadId;
 int main()
 {
 	mainThreadId = rtos::Thread::gettid();
+
+	SDFileSystem local("sd");
+	//Initialize text loggerLocalFileSystem local("local");
+	FILE* file = fopen("/sd/output.log", "a");
+	STE2015::Debugger::setLogFile(file);
+	INFO("\nNEW LOG\n");
 
 	// Create dummy list
 	STE2015::LED0 l0;
