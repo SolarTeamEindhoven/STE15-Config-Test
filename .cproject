@@ -48,8 +48,6 @@
 									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/${ProjName}/Config}&quot;"/>
 									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/${ProjName}/Actuators}&quot;"/>
 									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/${ProjName}/ESLib}&quot;"/>
-									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/${ProjName}/FatFileSystem}&quot;"/>
-									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/${ProjName}/FatFileSystem/option}&quot;"/>
 									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/${ProjName}/mbed-rtos}&quot;"/>
 									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/${ProjName}/mbed-rtos/rtos}&quot;"/>
 									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/${ProjName}/mbed-rtos/rtx}&quot;"/>
@@ -71,6 +69,10 @@
 									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/${ProjName}/mbed-src/targets/hal/TARGET_NXP/TARGET_LPC176X}&quot;"/>
 									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/${ProjName}/mbed-src/targets/hal/TARGET_NXP/TARGET_LPC176X/TARGET_MBED_LPC1768}&quot;"/>
 									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/${ProjName}/ESLib/include}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/${ProjName}/mbed-fs}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/${ProjName}/mbed-fs/fat/ChaN}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/${ProjName}/mbed-fs/fat}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/${ProjName}/mbed-fs/sd}&quot;"/>
 								</option>
 								<option id="com.crt.advproject.cpp.hdrlib.849699297" name="Library headers" superClass="com.crt.advproject.cpp.hdrlib" value="com.crt.advproject.cpp.hdrlib.newlib" valueType="enumerated"/>
 								<option id="com.crt.advproject.cpp.misc.dialect.1182803201" name="Language standard" superClass="com.crt.advproject.cpp.misc.dialect" value="com.crt.advproject.misc.dialect.gnupp0x" valueType="enumerated"/>
@@ -363,49 +365,6 @@
 								</inputType>
 							</tool>
 							<tool id="com.crt.advproject.link.exe.release.1417379956" name="MCU Linker" superClass="com.crt.advproject.link.exe.release"/>
-						</toolChain>
-					</folderInfo>
-					<folderInfo id="com.crt.advproject.config.exe.release.1977230950.180082224" name="/" resourcePath="mbed">
-						<toolChain id="com.crt.advproject.toolchain.exe.release.1962091265" name="Code Red MCU Tools" superClass="com.crt.advproject.toolchain.exe.release" unusedChildren="">
-							<targetPlatform binaryParser="org.eclipse.cdt.core.ELF;org.eclipse.cdt.core.GNU_ELF" id="com.crt.advproject.platform.exe.release" name="ARM-based MCU (Release)" superClass="com.crt.advproject.platform.exe.release"/>
-							<tool id="com.crt.advproject.cpp.exe.release.930589045" name="MCU C++ Compiler" superClass="com.crt.advproject.cpp.exe.release.822772966">
-								<option id="gnu.cpp.compiler.option.include.paths.1413630517" name="Include paths (-I)" superClass="gnu.cpp.compiler.option.include.paths" valueType="includePath">
-									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/${ProjName}/.}&quot;"/>
-									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/${ProjName}/FatFileSystem}&quot;"/>
-									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/${ProjName}/FatFileSystem/option}&quot;"/>
-									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/${ProjName}/mbed-rtos}&quot;"/>
-									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/${ProjName}/mbed-rtos/rtos}&quot;"/>
-									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/${ProjName}/mbed-rtos/rtx}&quot;"/>
-									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/${ProjName}/mbed-rtos/rtx/TARGET_CORTEX_M}&quot;"/>
-									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/${ProjName}/mbed-rtos/rtx/TARGET_CORTEX_M/TARGET_M3}&quot;"/>
-									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/${ProjName}/mbed-rtos/rtx/TARGET_CORTEX_M/TARGET_M3/TOOLCHAIN_GCC}&quot;"/>
-									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/${ProjName}/LPC1768_DMA}&quot;"/>
-									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/${ProjName}/mbed-src}&quot;"/>
-									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/${ProjName}/mbed-src/common}&quot;"/>
-									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/${ProjName}/mbed-src/hal}&quot;"/>
-									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/${ProjName}/mbed-src/api}&quot;"/>
-									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/${ProjName}/mbed-src/targets}&quot;"/>
-									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/${ProjName}/mbed-src/targets/cmsis}&quot;"/>
-									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/${ProjName}/mbed-src/targets/cmsis/TARGET_NXP}&quot;"/>
-									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/${ProjName}/mbed-src/targets/cmsis/TARGET_NXP/TARGET_LPC176X}&quot;"/>
-									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/${ProjName}/mbed-src/targets/cmsis/TARGET_NXP/TARGET_LPC176X/TOOLCHAIN_GCC_CR}&quot;"/>
-									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/${ProjName}/mbed-src/targets/hal}&quot;"/>
-									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/${ProjName}/mbed-src/targets/hal/TARGET_NXP}&quot;"/>
-									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/${ProjName}/mbed-src/targets/hal/TARGET_NXP/TARGET_LPC176X}&quot;"/>
-									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/${ProjName}/mbed-src/targets/hal/TARGET_NXP/TARGET_LPC176X/TARGET_MBED_LPC1768}&quot;"/>
-									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/${ProjName}/ESLib/include}&quot;"/>
-								</option>
-								<inputType id="com.crt.advproject.compiler.cpp.input.1706370613" superClass="com.crt.advproject.compiler.cpp.input"/>
-							</tool>
-							<tool id="com.crt.advproject.gcc.exe.release.536058616" name="MCU C Compiler" superClass="com.crt.advproject.gcc.exe.release.563782464">
-								<inputType id="com.crt.advproject.compiler.input.1565281352" superClass="com.crt.advproject.compiler.input"/>
-							</tool>
-							<tool id="com.crt.advproject.gas.exe.release.607817423" name="MCU Assembler" superClass="com.crt.advproject.gas.exe.release.579950187">
-								<inputType id="com.crt.advproject.assembler.input.21606274" name="Additional Assembly Source Files" superClass="com.crt.advproject.assembler.input"/>
-								<inputType id="cdt.managedbuild.tool.gnu.assembler.input.1275347806" superClass="cdt.managedbuild.tool.gnu.assembler.input"/>
-							</tool>
-							<tool id="com.crt.advproject.link.cpp.exe.release.941965043" name="MCU C++ Linker" superClass="com.crt.advproject.link.cpp.exe.release.1927521706"/>
-							<tool id="com.crt.advproject.link.exe.release.1836661645" name="MCU Linker" superClass="com.crt.advproject.link.exe.release.1417379956"/>
 						</toolChain>
 					</folderInfo>
 					<sourceEntries>
