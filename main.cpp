@@ -21,10 +21,22 @@ int main()
 {
 	mainThreadId = rtos::Thread::gettid();
 
-	SDFileSystem local("sd");
-	//Initialize text loggerLocalFileSystem local("local");
+	PinName mosi = P0_18;
+	PinName miso = P0_17;
+	PinName sclk = P0_15;
+	PinName cs = P0_16;
+#ifdef SDLOGGING
+	SDFileSystem local(mosi, miso, sclk, cs, "sd");
 	FILE* file = fopen("/sd/output.log", "a");
-	STE2015::Debugger::setLogFile(file);
+#else
+	//Initialize text logger
+	LocalFileSystem local("local");
+	FILE* file = fopen("/local/output.log", "a");
+#endif
+	if(file != NULL)
+	{
+		STE2015::Debugger::setLogFile(file);
+	}
 	INFO("\nNEW LOG\n");
 
 	// Create dummy list
@@ -64,6 +76,11 @@ int main()
 	CANReader reader(CANBus, canSensors, 2);
 
 	rtos::Thread::signal_wait(SIGNAL_TERMINATE);
+
+	if(file != NULL)
+	{
+		fclose(file);
+	}
 }
 
 void signalMainThread(MainThreadSignalList signal)
