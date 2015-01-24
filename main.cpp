@@ -9,9 +9,12 @@
 #include "CANSensor.h"
 #include "FIRFilter.h"
 #include "SDFileSystem.h"
+#include "SDLManager.h"
+#include "SensorDataLogger.h"
 
 // Uncomment to use hardware sensors on this board instead of CAN sensors
 #define IMPLEMENT_SENSOR_HARDWARE
+//#define SD_LOGGING
 
 using namespace STE2015;
 
@@ -25,12 +28,12 @@ int main()
 	PinName miso = P0_17;
 	PinName sclk = P0_15;
 	PinName cs = P0_16;
-#ifdef SDLOGGING
-	SDFileSystem local(mosi, miso, sclk, cs, "sd");
+#ifdef SD_LOGGING
+	SDFileSystem fs(mosi, miso, sclk, cs, "sd");
 	FILE* file = fopen("/sd/output.log", "a");
 #else
 	//Initialize text logger
-	LocalFileSystem local("local");
+	LocalFileSystem fs("local");
 	FILE* file = fopen("/local/output.log", "a");
 #endif
 	if(file != NULL)
@@ -49,6 +52,8 @@ int main()
 	STE2015::LED6 l6;
 	STE2015::LED7 l7;
 
+	SDLManager<1> loggerManager(fs);
+
 	AbstractActuator* listAbst[8] = {&l0, &l1, &l2, &l3, &l4, &l5, &l6, &l7};
 	ActuatorList actuators(listAbst, (size_t) 8);
 
@@ -60,8 +65,8 @@ int main()
 
 	// Create sensors
 #ifdef IMPLEMENT_SENSOR_HARDWARE
-	JoyStickUp joystickUp(NULL, po);
-	PotentioMeter potentio(NULL, po);
+	JoyStickUp joystickUp(loggerManager, po);
+	PotentioMeter potentio(po);
 
 	AbstractCANSensor* listSens[0] = {};
 	CanSensorList canSensors(listSens, (size_t) 0);
