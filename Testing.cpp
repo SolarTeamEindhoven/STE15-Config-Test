@@ -10,7 +10,7 @@
 #include "Testing.h"
 #include "test/WDTTest.h"
 #include "test/actuator/ActuatorListTest.h"
-#include "TextLogger.h"
+#include "logging/TextLogger.h"
 #include "test/sensor/SensorStateBufferTest.h"
 #include "test/PostOfficeTest.h"
 #include "test/can/AcceptanceFilterTest.h"

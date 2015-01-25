@@ -8,7 +8,7 @@
 #include "mbed.h"
 #include "WDT.h"
 #include "rtos.h"
-#include <TextLogger.h>
+#include <logging/TextLogger.h>
 
 DigitalOut leds[8] =
 {

@@ -7,9 +7,6 @@
 [submodule "Actuators"]
 	path = Actuators
 	url = git@bitbucket.org:solarteameindhoven/ste15-actuators.git
-[submodule "FatFileSystem"]
-	path = FatFileSystem
-	url = git@bitbucket.org:solarteameindhoven/fatfilesystem.git
 [submodule "mbed-src"]
 	path = mbed-src
 	url = git@bitbucket.org:solarteameindhoven/mbed-src.git
@@ -19,3 +16,9 @@
 [submodule "LPC1768_DMA"]
 	path = LPC1768_DMA
 	url = git@bitbucket.org:solarteameindhoven/lpc1768_dma.git
+[submodule "ste15-csv2cpp"]
+	path = ste15-csv2cpp
+	url = git@bitbucket.org:solarteameindhoven/ste15-csv2cpp.git
+[submodule "mbed-fs"]
+	path = mbed-fs
+	url = git@bitbucket.org:solarteameindhoven/sdfilesystem.git
