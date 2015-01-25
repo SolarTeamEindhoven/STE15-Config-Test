@@ -58,3 +58,4 @@ C(++) ignore
 .~lock.*
 /output.log
 /log000.log
+*.log
