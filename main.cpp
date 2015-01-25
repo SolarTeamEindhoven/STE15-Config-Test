@@ -5,12 +5,8 @@
 #include "ESLib.h"
 #include "PotentioMeter.h"
 #include "Led.h"
-#include "CANReader.h"
-#include "CANSensor.h"
 #include "FIRFilter.h"
 #include "SDFileSystem.h"
-#include "SDLManager.h"
-#include "SensorDataLogger.h"
 
 // Uncomment to use hardware sensors on this board instead of CAN sensors
 #define IMPLEMENT_SENSOR_HARDWARE
