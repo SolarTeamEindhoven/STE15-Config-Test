@@ -21,5 +21,6 @@ void testBaseSensor();
 void testBaseActuator();
 void testAcceptanceFilter();
 void testCanClasses();
+void testPBValueQueue();
 
 #endif /* TESTING_H_ */

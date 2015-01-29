@@ -78,3 +78,9 @@ void testCanClasses()
 	//:TODO: call tests
 }
 
+void testPBValueQueue()
+{
+	PBValueQueueTest::test();
+	INFO("PBValueQueue tests are finished");
+}
+
