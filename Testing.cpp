@@ -14,6 +14,7 @@
 #include "test/sensor/SensorStateBufferTest.h"
 #include "test/PostOfficeTest.h"
 #include "test/can/AcceptanceFilterTest.h"
+#include "test/PbValueQueueTest.h"
 
 using namespace STE2015;
 
@@ -80,7 +81,7 @@ void testCanClasses()
 
 void testPBValueQueue()
 {
-	PBValueQueueTest::test();
+	PbValueQueueTest::test();
 	INFO("PBValueQueue tests are finished");
 }
 
