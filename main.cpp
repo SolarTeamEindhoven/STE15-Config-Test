@@ -66,10 +66,8 @@ int main() {
      *
      * When the testing starts or is reset, all of the leds are turned off.
      */
-
 	setLedsToNumber(0);
 	bool resetByWDT = STE2015::WatchDogTimer::causedReset();
-
 
 	LocalFileSystem local("local");
 	FILE* file = fopen("/local/output.log", "a");
@@ -79,9 +77,9 @@ int main() {
 	STE2015::Debugger::setLogFile(file);
 
 	ERROR("ERROR method of Text logger is working if you see this message");
-	WARN("WARN method of Text logger is working if you see this message");
-	DBG("DBG method of Text logger is working if you see this message");
-	INFO("INFO method of Text logger is working if you see this message");
+	WARN ( "WARN method of Text logger is working if you see this message");
+	DBG  (  "DBG method of Text logger is working if you see this message");
+	INFO ( "INFO method of Text logger is working if you see this message");
 
 	if (!resetByWDT) {
 		testSensorStateBuffer();
@@ -111,6 +109,8 @@ int main() {
 		testCanClasses();
 		setLedsToNumber(9);
 		waitForUser();
+		testPBValueQueue();
+		setLedsToNumber(10);
 
 		//WDT timer may have caused the reset. It's a bit special regarding the testing!
 		waitForUser();
