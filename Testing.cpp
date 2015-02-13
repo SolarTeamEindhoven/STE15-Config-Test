@@ -15,6 +15,7 @@
 #include "test/PostOfficeTest.h"
 #include "test/can/AcceptanceFilterTest.h"
 #include "test/PbValueQueueTest.h"
+#include "test/can/CANTest.h"
 
 using namespace STE2015;
 
@@ -76,7 +77,8 @@ void testAcceptanceFilter()
 
 void testCanClasses()
 {
-	//:TODO: call tests
+	CANTest::test();
+	INFO("CAN tests finished");
 }
 
 void testPBValueQueue()
