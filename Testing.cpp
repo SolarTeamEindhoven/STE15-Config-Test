@@ -7,12 +7,20 @@
 
 #define LOGLEVEL 4
 
+// Related header
 #include "Testing.h"
-#include "test/WDTTest.h"
-#include "test/actuator/ActuatorListTest.h"
+// Logging
 #include "logging/TextLogger.h"
-#include "test/sensor/SensorStateBufferTest.h"
+// Global
+#include "test/WDTTest.h"
 #include "test/PostOfficeTest.h"
+// Actuator
+#include "test/actuator/ActuatorListTest.h"
+#include "test/actuator/AbstractActuatorTest.h"
+// Sensor
+#include "test/sensor/SensorStateBufferTest.h"
+#include "test/sensor/AbstractSensorTest.h"
+// CAN
 #include "test/can/AcceptanceFilterTest.h"
 #include "test/PbValueQueueTest.h"
 
@@ -33,29 +41,27 @@ void testSensorStateBuffer()
 
 void testAbstractActuator()
 {
-	//:TODO: call tests
+	AbstractActuatorTest().test();
+	INFO("AbstractActuator tests are finished.");
 }
 
 void testActuatorList()
 {
-#ifdef COMPILE_ACTUATOR_TESTS
 	ActuatorListTest::test();
 	INFO("ActuatorList tests are finished");
-#endif
 }
 
 void testPostOffice()
 {
-#ifdef COMPILE_ACTUATOR_TESTS
 	PostOfficeTest::testPostOffice();
 	INFO("PostOffice tests are finished");
-#endif
 }
 
 void testAbstractSensor()
 
 {
-	//:TODO: call tests
+	AbstractSensorTest().test();
+	INFO("AbstractSensor tests are finished.");
 }
 
 void testBaseSensor()
@@ -71,7 +77,7 @@ void testBaseActuator()
 
 void testAcceptanceFilter()
 {
-	AcceptanceFilterTest::test();
+//	AcceptanceFilterTest::test();
 }
 
 void testCanClasses()
