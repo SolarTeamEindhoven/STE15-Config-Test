@@ -8,7 +8,8 @@
 #include "mbed.h"
 #include "WDT.h"
 #include "rtos.h"
-#include <logging/TextLogger.h>
+#include "logging/TextLogger.h"
+#include "SemiHostSTDStreams.h"
 
 DigitalOut leds[8] =
 {
@@ -39,11 +40,14 @@ void setLedsToNumber(uint8_t number)
 	}
 }
 
+#define RUSH
+
 /**
  * Function that will block until the joystick is pushed up.
  */
 void waitForUser()
 {
+#ifndef RUSH
 	while(joyup)
 	{
 		//empty body
@@ -52,6 +56,7 @@ void waitForUser()
 	{
 		//empty body
 	}
+#endif
 }
 
 int main() {
@@ -69,12 +74,11 @@ int main() {
 	setLedsToNumber(0);
 	bool resetByWDT = STE2015::WatchDogTimer::causedReset();
 
-	LocalFileSystem local("local");
-	FILE* file = fopen("/local/output.log", "a");
+	STE2015::SemihostSTDStreams stream(true);
 
-	INFO("\nNEW LOG\n");
+	STE2015::Debugger::setLogFile(stdout);
 
-	STE2015::Debugger::setLogFile(file);
+	INFO("\n\n");
 
 	ERROR("ERROR method of Text logger is working if you see this message");
 	WARN ( "WARN method of Text logger is working if you see this message");
@@ -126,14 +130,12 @@ int main() {
 		waitForUser();
 	}
 
-	fclose(file);
-
 	int number = 0;
 	while(true)
 	{
 		//Victory dance
 		setLedsToNumber(number);
-		rtos::Thread::wait(100);
+		rtos::Thread::wait(10);
 		number++;
 	}
 }
