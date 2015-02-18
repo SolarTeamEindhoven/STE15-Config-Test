@@ -25,6 +25,8 @@
 #include "test/PbValueQueueTest.h"
 #include "test/can/CANTest.h"
 
+#include "test/IntegrationTest.h"
+
 using namespace STE2015;
 
 void testWDT()
@@ -59,7 +61,6 @@ void testPostOffice()
 }
 
 void testAbstractSensor()
-
 {
 	AbstractSensorTest().test();
 	INFO("AbstractSensor tests are finished.");
@@ -78,7 +79,7 @@ void testBaseActuator()
 
 void testAcceptanceFilter()
 {
-//	AcceptanceFilterTest::test();
+	AcceptanceFilterTest::test();
 }
 
 void testCanClasses()
@@ -93,3 +94,8 @@ void testPBValueQueue()
 	INFO("PBValueQueue tests are finished");
 }
 
+void integrationTest()
+{
+	IntegrationTest::test();
+	INFO("Integration test finished");
+}

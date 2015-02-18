@@ -9,7 +9,12 @@
 #include "WDT.h"
 #include "rtos.h"
 #include "logging/TextLogger.h"
-#include "SemiHostSTDStreams.h"
+//#define USE_CONSOLE_DEBUGGING
+#ifdef USE_CONSOLE_DEBUGGING
+#include "SemihostSTDStreams.h"
+#else
+#include "LocalFileSystem.h"
+#endif
 
 DigitalOut leds[8] =
 {
@@ -74,9 +79,17 @@ int main() {
 	setLedsToNumber(0);
 	bool resetByWDT = STE2015::WatchDogTimer::causedReset();
 
+#ifdef USE_CONSOLE_DEBUGGING
 	STE2015::SemihostSTDStreams stream(true);
-
 	STE2015::Debugger::setLogFile(stdout);
+#else
+	LocalFileSystem fs("local");
+	FILE* logFile = fopen("/local/output.log", "a");
+	if(logFile != NULL)
+	{
+		STE2015::Debugger::setLogFile(logFile);
+	}
+#endif
 
 	INFO("\n\n");
 
@@ -115,6 +128,9 @@ int main() {
 		waitForUser();
 		testPBValueQueue();
 		setLedsToNumber(10);
+		waitForUser();
+		integrationTest();
+		setLedsToNumber(11);
 
 		//WDT timer may have caused the reset. It's a bit special regarding the testing!
 		waitForUser();
