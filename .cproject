@@ -40,6 +40,7 @@
 									<listOptionValue builtIn="false" value="ARM_MATH_CM3"/>
 									<listOptionValue builtIn="false" value="MBED_BUILD_TIMESTAMP=1417689479.23"/>
 									<listOptionValue builtIn="false" value="__MBED__=1"/>
+									<listOptionValue builtIn="false" value="LOGLEVEL=4"/>
 								</option>
 								<option id="gnu.cpp.compiler.option.other.other.1100343989" name="Other flags" superClass="gnu.cpp.compiler.option.other.other" value="-c -fmessage-length=0 -fno-builtin -ffunction-sections -fdata-sections -fno-exceptions -fno-rtti" valueType="string"/>
 								<option id="gnu.cpp.compiler.option.include.paths.1011871574" name="Include paths (-I)" superClass="gnu.cpp.compiler.option.include.paths" valueType="includePath">
@@ -99,6 +100,7 @@
 									<listOptionValue builtIn="false" value="ARM_MATH_CM3"/>
 									<listOptionValue builtIn="false" value="MBED_BUILD_TIMESTAMP=1417689479.23"/>
 									<listOptionValue builtIn="false" value="__MBED__=1"/>
+									<listOptionValue builtIn="false" value="LOGLEVEL=4"/>
 								</option>
 								<option id="gnu.c.compiler.option.misc.other.1521041525" name="Other flags" superClass="gnu.c.compiler.option.misc.other" value="-c -fmessage-length=0 -fno-builtin -ffunction-sections -fdata-sections -fno-exceptions -fno-rtti" valueType="string"/>
 								<option id="gnu.c.compiler.option.include.paths.1293117680" name="Include paths (-I)" superClass="gnu.c.compiler.option.include.paths" valueType="includePath">
