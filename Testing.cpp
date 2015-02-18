@@ -23,6 +23,7 @@
 // CAN
 #include "test/can/AcceptanceFilterTest.h"
 #include "test/PbValueQueueTest.h"
+#include "test/can/CANTest.h"
 
 #include "test/IntegrationTest.h"
 
@@ -83,7 +84,8 @@ void testAcceptanceFilter()
 
 void testCanClasses()
 {
-	//:TODO: call tests
+	CANTest::test();
+	INFO("CAN tests finished");
 }
 
 void testPBValueQueue()
