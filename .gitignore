@@ -45,7 +45,6 @@ C(++) ignore
 
 # Executables
 *.exe
-*.out
 *.app
 
 /Debug/
@@ -54,3 +53,8 @@ C(++) ignore
 
 # merge backups
 *.orig
+/documentation/
+/dg.log
+.~lock.*
+*.log
+/temp.txt

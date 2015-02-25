@@ -1,21 +1,24 @@
 [submodule "ESLib"]
 	path = ESLib
-	url = git@bitbucket.org:solarteameindhoven/ste15-eslib.git
+	url = git@github.com:SolarTeamEindhoven/STE15-ESLib.git
 [submodule "Sensors"]
 	path = Sensors
-	url = git@bitbucket.org:solarteameindhoven/ste15-sensors.git
+	url = git@github.com:SolarTeamEindhoven/STE15-Sensors.git
 [submodule "Actuators"]
 	path = Actuators
-	url = git@bitbucket.org:solarteameindhoven/ste15-actuators.git
-[submodule "FatFileSystem"]
-	path = FatFileSystem
-	url = git@bitbucket.org:solarteameindhoven/fatfilesystem.git
+	url = git@github.com:SolarTeamEindhoven/STE15-Actuators.git
 [submodule "mbed-src"]
 	path = mbed-src
-	url = git@bitbucket.org:solarteameindhoven/mbed-src.git
+	url = git@github.com:SolarTeamEindhoven/STE15-mbed.git
 [submodule "mbed-rtos"]
 	path = mbed-rtos
-	url = git@bitbucket.org:solarteameindhoven/mbed-rtos.git
+	url = git@github.com:SolarTeamEindhoven/STE15-rtos.git
 [submodule "LPC1768_DMA"]
 	path = LPC1768_DMA
-	url = git@bitbucket.org:solarteameindhoven/lpc1768_dma.git
+	url = git@github.com:SolarTeamEindhoven/STE15-DMA.git
+[submodule "ste15-csv2cpp"]
+	path = ste15-csv2cpp
+	url = git@github.com:SolarTeamEindhoven/STE15-CSV2CPP.git
+[submodule "mbed-fs"]
+	path = mbed-fs
+	url = git@github.com:SolarTeamEindhoven/STE15-FileSystem.git

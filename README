@@ -2,3 +2,5 @@
 
 This is the base project for all LPC1769 based micro controller boards for the solar car. It is not meant to be used directly, but instead should be forked into a board specific repository. Any changes in this base project can than easily be reflected in all forkes of this project.
 
+To generate the documentation, run doxygen in the same folder where this readme is located with dgconfig as config file.
+
