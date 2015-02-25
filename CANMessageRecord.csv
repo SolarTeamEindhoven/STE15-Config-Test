@@ -1,7 +1,7 @@
-Priority,ID,PeriodMs,DataLength,DataTypes,DataNames,MessageType,RequirementsLinkage,Description
-1,TemperatureSensor,1,8,"uint32_t, int32_t","tempKelvin, tempCelcius",Sensor,,"No idea why you would want the temp in both Kelvin and Celcius, but you can."
-2,DoorSensor,20,4,int32_t,degreeOpen,Sensor,RDW 1.2.3.4,Indicates the amount of degree that the door is opened.
-3,GPSSensor,500,8,"float, float",,Sensor,,A GPS location is generated roughly each second. Sending it twice a second allows for lost messages.
-4,DNRSensor,10,1,uint8_t,state,State update,,"Indicated whether the car is in Drive, Neutral or Reverse. The state of two sensors is given by the bit field called state. Bit 1 indicates that the car is in drive and bit two indicated that the car is in reverse. If the value of state is 0, the car is in neutral (neither drive or reverse). If the value is more than 2 there is an error."
-5,JoyUpSensor,10,1,bool,joyIsResting,Sensor,,Used for the joystick on the debug boards
-6,Potentio,10,4,float,value,Sensor,,Indicates the value of the potentio meter
+Priority,ID,Periodus,DataLength,DataTypes,DataNames,MessageType,RequirementsLinkage,Description
+1,TemperatureSensor,1000,8,"uint32_t, int32_t","tempKelvin, tempCelcius",Sensor,,"No idea why you would want the temp in both Kelvin and Celcius, but you can."
+2,DoorSensor,20000,4,int32_t,degreeOpen,Sensor,RDW 1.2.3.4,Indicates the amount of degree that the door is opened.
+3,GPSSensor,500000,8,"float, float",,Sensor,,A GPS location is generated roughly each second. Sending it twice a second allows for lost messages.
+4,DNRSensor,10000,1,uint8_t,state,State update,,"Indicated whether the car is in Drive, Neutral or Reverse. The state of two sensors is given by the bit field called state. Bit 1 indicates that the car is in drive and bit two indicated that the car is in reverse. If the value of state is 0, the car is in neutral (neither drive or reverse). If the value is more than 2 there is an error."
+5,JoyUpSensor,10000,1,bool,joyIsResting,Sensor,,Used for the joystick on the debug boards
+6,Potentio,10000,4,float,value,Sensor,,Indicates the value of the potentio meter

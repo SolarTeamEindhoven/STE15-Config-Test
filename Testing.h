@@ -23,5 +23,6 @@ void testAcceptanceFilter();
 void testCanClasses();
 void testPBValueQueue();
 void integrationTest();
+void sdlTest();
 
 #endif /* TESTING_H_ */

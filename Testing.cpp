@@ -26,6 +26,7 @@
 #include "test/can/CANTest.h"
 
 #include "test/IntegrationTest.h"
+#include "test/SdlTest.h"
 
 using namespace STE2015;
 
@@ -98,4 +99,10 @@ void integrationTest()
 {
 	IntegrationTest::test();
 	INFO("Integration test finished");
+}
+
+void sdlTest()
+{
+	SDLTest::testSDL();
+	INFO("SDL tests finished");
 }

@@ -16,6 +16,8 @@
 #include "LocalFileSystem.h"
 #endif
 
+#include "SDFileSystem.h"
+
 DigitalOut leds[8] =
 {
 		DigitalOut(P1_28),
@@ -99,42 +101,45 @@ int main() {
 	INFO ( "INFO method of Text logger is working if you see this message");
 
 	if (!resetByWDT) {
-		testSensorStateBuffer();
-		setLedsToNumber(1);
-		waitForUser();
-		testAbstractActuator();
-		setLedsToNumber(2);
-		waitForUser();
-		testActuatorList();
-		setLedsToNumber(3);
-		waitForUser();
-		testPostOffice();
-		setLedsToNumber(4);
-		waitForUser();
-		testAbstractSensor();
-		setLedsToNumber(5);
-		waitForUser();
-		testBaseSensor();
-		setLedsToNumber(6);
-		waitForUser();
-		testBaseActuator();
-		setLedsToNumber(7);
-		waitForUser();
-		testAcceptanceFilter();
-		setLedsToNumber(8);
-		waitForUser();
-		testCanClasses();
-		setLedsToNumber(9);
-		waitForUser();
-		testPBValueQueue();
-		setLedsToNumber(10);
+//		testSensorStateBuffer();
+//		setLedsToNumber(1);
+//		waitForUser();
+//		testAbstractActuator();
+//		setLedsToNumber(2);
+//		waitForUser();
+//		testActuatorList();
+//		setLedsToNumber(3);
+//		waitForUser();
+//		testPostOffice();
+//		setLedsToNumber(4);
+//		waitForUser();
+//		testAbstractSensor();
+//		setLedsToNumber(5);
+//		waitForUser();
+//		testBaseSensor();
+//		setLedsToNumber(6);
+//		waitForUser();
+//		testBaseActuator();
+//		setLedsToNumber(7);
+//		waitForUser();
+//		sdlTest();
+//		setLedsToNumber(8);
+//		waitForUser();
+//		testAcceptanceFilter();
+//		setLedsToNumber(9);
+//		waitForUser();
+//		testCanClasses();
+//		setLedsToNumber(10);
+//		waitForUser();
+//		testPBValueQueue();
+//		setLedsToNumber(11);
 		waitForUser();
 		integrationTest();
-		setLedsToNumber(11);
+		setLedsToNumber(12);
 
 		//WDT timer may have caused the reset. It's a bit special regarding the testing!
 		waitForUser();
-		testWDT();
+		//testWDT();
 		setLedsToNumber(255);
 	}
 	else
@@ -151,7 +156,7 @@ int main() {
 	{
 		//Victory dance
 		setLedsToNumber(number);
-		rtos::Thread::wait(10);
+		rtos::Thread::wait_ms(10);
 		number++;
 	}
 }
