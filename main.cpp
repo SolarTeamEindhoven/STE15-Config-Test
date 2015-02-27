@@ -5,13 +5,12 @@
 #include "ESLib.h"
 #include "PotentioMeter.h"
 #include "Led.h"
-#include "CANReader.h"
-#include "CANSensor.h"
 #include "FIRFilter.h"
 #include "SDFileSystem.h"
 
 // Uncomment to use hardware sensors on this board instead of CAN sensors
 #define IMPLEMENT_SENSOR_HARDWARE
+//#define SD_LOGGING
 
 using namespace STE2015;
 
@@ -21,10 +20,22 @@ int main()
 {
 	mainThreadId = rtos::Thread::gettid();
 
-	SDFileSystem local("sd");
-	//Initialize text loggerLocalFileSystem local("local");
+	PinName mosi = P0_18;
+	PinName miso = P0_17;
+	PinName sclk = P0_15;
+	PinName cs = P0_16;
+#ifdef SD_LOGGING
+	SDFileSystem fs(mosi, miso, sclk, cs, "sd");
 	FILE* file = fopen("/sd/output.log", "a");
-	STE2015::Debugger::setLogFile(file);
+#else
+	//Initialize text logger
+	LocalFileSystem fs("local");
+	FILE* file = fopen("/local/output.log", "a");
+#endif
+	if(file != NULL)
+	{
+		STE2015::Debugger::setLogFile(file);
+	}
 	INFO("\nNEW LOG\n");
 
 	// Create dummy list
@@ -37,6 +48,8 @@ int main()
 	STE2015::LED6 l6;
 	STE2015::LED7 l7;
 
+	SDLManager<1> loggerManager(fs);
+
 	AbstractActuator* listAbst[8] = {&l0, &l1, &l2, &l3, &l4, &l5, &l6, &l7};
 	ActuatorList actuators(listAbst, (size_t) 8);
 
@@ -48,8 +61,8 @@ int main()
 
 	// Create sensors
 #ifdef IMPLEMENT_SENSOR_HARDWARE
-	JoyStickUp joystickUp(NULL, po);
-	PotentioMeter potentio(NULL, po);
+	JoyStickUp joystickUp(loggerManager, po);
+	PotentioMeter potentio(po);
 
 	AbstractCANSensor* listSens[0] = {};
 	CanSensorList canSensors(listSens, (size_t) 0);
@@ -64,6 +77,11 @@ int main()
 	CANReader reader(CANBus, canSensors, 2);
 
 	rtos::Thread::signal_wait(SIGNAL_TERMINATE);
+
+	if(file != NULL)
+	{
+		fclose(file);
+	}
 }
 
 void signalMainThread(MainThreadSignalList signal)

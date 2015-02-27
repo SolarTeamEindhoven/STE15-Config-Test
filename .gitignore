@@ -56,3 +56,6 @@ C(++) ignore
 /documentation/
 /dg.log
 .~lock.*
+/output.log
+/log000.log
+*.log
