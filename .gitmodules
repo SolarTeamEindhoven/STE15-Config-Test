@@ -22,3 +22,6 @@
 [submodule "mbed-fs"]
 	path = mbed-fs
 	url = git@bitbucket.org:solarteameindhoven/sdfilesystem.git
+[submodule "mbed-dsp"]
+	path = mbed-dsp
+	url = git@github.com:SolarTeamEindhoven/STE15-mbed-dsp.git
