@@ -22,3 +22,9 @@
 [submodule "mbed-fs"]
 	path = mbed-fs
 	url = git@github.com:SolarTeamEindhoven/STE15-FileSystem.git
+[submodule "mbed-dsp"]
+	path = mbed-dsp
+	url = git@github.com:SolarTeamEindhoven/STE15-mbed-dsp.git
+[submodule "CANMessageRecord"]
+	path = CANMessageRecord
+	url = git@github.com:SolarTeamEindhoven/CANMessageRecord.git
