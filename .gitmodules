@@ -22,3 +22,6 @@
 [submodule "mbed-fs"]
 	path = mbed-fs
 	url = git@bitbucket.org:solarteameindhoven/sdfilesystem.git
+[submodule "CANMessageRecord"]
+	path = CANMessageRecord
+	url = git@github.com:SolarTeamEindhoven/CANMessageRecord.git
